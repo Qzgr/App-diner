@@ -1,4 +1,4 @@
-# Add Diner — Gestor simple de gastos
+# Add Diner — Gestor simple de gastos (EN DESARROLLO)
 
 Pequeña aplicación web para agregar, listar y eliminar gastos personales. Los datos se guardan en `localStorage` del navegador; cuenta con un menú lateral cargado dinámicamente.
 
@@ -24,3 +24,4 @@ Pequeña aplicación web para agregar, listar y eliminar gastos personales. Los 
 
 **Licencia**
 - Libre para uso educativo y de demostración.
+
