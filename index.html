@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+
+<body>
+    <div class="content-menu">
+        <button class="menu" aria-controls="menu-panel" aria-expanded="false" aria-label="Abrir menú"></button>
+    </div>
+
+    <div id="menu-panel" class="menu-panel" aria-hidden="true"></div>
+    <div class="content-form">
+        <form id="sueldo-form" action="">
+            <h2>Agrega tu sueldo</h2>
+            <input id="sueldo" type="text" placeholder="Sueldo">
+            <button type="submit">Agregar</button>
+        </form>
+
+        <form id="gasto-form">
+            <h2>Agrega tus gastos</h2>
+            <input id="gasto-amount" type="number" placeholder="Monto" step="0.01" min="0">
+            <input id="gasto-name" type="text" placeholder="Nombre del gasto">
+            <button type="submit">Agregar Gasto</button>
+        </form>
+
+        <div id="gasto-list" class="gasto-list" aria-live="polite"></div>
+    </div>
+
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/expenses.js"></script>
+
+</body>
+</html>
