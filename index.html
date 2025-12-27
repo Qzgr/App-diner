@@ -11,29 +11,46 @@
 
 <body>
     <div class="content-menu">
-        <button class="menu" aria-controls="menu-panel" aria-expanded="false" aria-label="Abrir menú"></button>
+        <button class="menu-btn" id="btn2">☰</button>
+        <h1>Ahorros</h1>
     </div>
 
-    <div id="menu-panel" class="menu-panel" aria-hidden="true"></div>
-    <div class="content-form">
-        <form id="sueldo-form" action="">
-            <h2>Agrega tu sueldo</h2>
-            <input id="sueldo" type="text" placeholder="Sueldo">
-            <button type="submit">Agregar</button>
-        </form>
-
-        <form id="gasto-form">
-            <h2>Agrega tus gastos</h2>
-            <input id="gasto-amount" type="number" placeholder="Monto" step="0.01" min="0">
-            <input id="gasto-name" type="text" placeholder="Nombre del gasto">
-            <button type="submit">Agregar Gasto</button>
-        </form>
-
-        <div id="gasto-list" class="gasto-list" aria-live="polite"></div>
+    <div class="ahorros-container">
+        <h3>Ingresa el total a querer ahorrar</h3>
+        <input type="number" id="ahorros-input" placeholder="total a ahorrar">
+        <button id="btn2">OK</button>
     </div>
 
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/expenses.js"></script>
+    <div class="cont-entrada">
+        <h3>Ingresa el monto a ahorrar</h3>
+        <input type="number" id="monto-input" placeholder="monto a ahorrar">
+        <button id="01" class="btn-s">s</button>
+        <button id="02" class="btn-r">r</button>
+    </div>
+
+    <div class="cont-gastos">
+        <h3>Ingresa el monto gastado</h3>
+        <input type="number" id="monto-input" placeholder="monto gastado">
+        <button id="01" class="btn-s">s</button>
+        <button id="02" class="btn-r">r</button>
+    </div>
+
+    <div class="cont-resumen">
+        <h3>Resumen</h3>
+        <p>Total Ahorrado: <span id="total-ahorrado">0</span></p>
+        <p>Total Gastado: <span id="total-gastado">0</span></p>
+        <p>Balance: <span id="balance">0</span></p>
+    </div>
+
+    <div class="cont-list">
+        <h3>Lista de Transacciones</h3>
+        <ul id="transacciones-list">
+            <!-- Las transacciones se agregarán aquí dinámicamente -->
+            <li>Ahorro: $100</li>
+            <li>Gasto: -$50</li>
+        </ul>
+    </div>
 
 </body>
+
 </html>
