@@ -18,39 +18,39 @@
     <div class="ahorros-container">
         <h3>Ingresa el total a querer ahorrar</h3>
         <input type="number" id="ahorros-input" placeholder="total a ahorrar">
-        <button id="btn2">OK</button>
+        <button id="ok-btn">OK</button>
     </div>
 
-    <div class="cont-entrada">
+    <div class="cont-entrada disabled">
         <h3>Ingresa el monto a ahorrar</h3>
-        <input type="number" id="monto-input" placeholder="monto a ahorrar">
-        <button id="01" class="btn-s">s</button>
-        <button id="02" class="btn-r">r</button>
+        <input type="number" id="monto-ahorro-input" placeholder="monto a ahorrar" disabled>
+        <button id="add-ahorro-btn" class="btn-s" disabled>s</button>
+        <button id="remove-ahorro-btn" class="btn-r" disabled>r</button>
     </div>
 
-    <div class="cont-gastos">
+    <div class="cont-gastos disabled">
         <h3>Ingresa el monto gastado</h3>
-        <input type="number" id="monto-input" placeholder="monto gastado">
-        <button id="01" class="btn-s">s</button>
-        <button id="02" class="btn-r">r</button>
+        <input type="number" id="monto-gasto-input" placeholder="monto gastado" disabled>
+        <button id="add-gasto-btn" class="btn-s" disabled>s</button>
+        <button id="remove-gasto-btn" class="btn-r" disabled>r</button>
     </div>
 
-    <div class="cont-resumen">
+    <div class="cont-resumen disabled">
         <h3>Resumen</h3>
         <p>Total Ahorrado: <span id="total-ahorrado">0</span></p>
         <p>Total Gastado: <span id="total-gastado">0</span></p>
         <p>Balance: <span id="balance">0</span></p>
+        <p>Ultima transaccion: <span id="trance">0</span></p>
     </div>
 
-    <div class="cont-list">
+    <div class="cont-list disabled">
         <h3>Lista de Transacciones</h3>
         <ul id="transacciones-list">
             <!-- Las transacciones se agregarán aquí dinámicamente -->
-            <li>Ahorro: $100</li>
-            <li>Gasto: -$50</li>
         </ul>
     </div>
 
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
