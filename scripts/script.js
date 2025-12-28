@@ -171,4 +171,30 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (montoGastoInput) montoGastoInput.value = '';
 		});
 	}
+
+	// Obtener el toggle y manejar tema
+	const toggle = document.getElementById('theme-toggle');
+	const body = document.body;
+
+	function applyTheme(isDark){
+		if(isDark) body.classList.add('dark-theme');
+		else body.classList.remove('dark-theme');
+		localStorage.setItem('theme-dark', isDark ? '1' : '0');
+	}
+
+	// Inicializar desde localStorage
+	const saved = localStorage.getItem('theme-dark');
+	if(saved !== null){
+		applyTheme(saved === '1');
+		// actualizar estado del checkbox para que coincida con el tema
+		if(toggle) toggle.checked = (saved === '1');
+	}
+
+	// Escuchar cambios del switch
+	if(toggle){
+		toggle.addEventListener('change', e => {
+			// cuando esté en luna -> tema oscuro; en sol -> tema claro
+			applyTheme(e.target.checked);
+		});
+	}
 });
