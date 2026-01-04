@@ -27,6 +27,11 @@ body {
     color: var(--text);
 }
 
+/* evitar scroll horizontal global (previene que aparezca scrollbar lateral) */
+html, body {
+    overflow-x: hidden;
+}
+
 /* aplicar color a elementos de tarjeta */
 .content-menu,
 .ahorros-container,
@@ -42,7 +47,8 @@ body {
 .content-menu {
     display: flex;
     align-items: center;
-
+    position: relative;
+    z-index: 1100; /* que quede siempre encima del panel */
 }
 
 .content-menu h1 {
@@ -383,4 +389,13 @@ body.dark-theme .hamburger svg {
 body.dark-theme .hamburger input:checked+svg .line,
 body.dark-theme .hamburger input:checked+svg .line-top-bottom {
     stroke: #ffffff;
+}
+
+/* cuando el menu está abierto, bloquear scroll del fondo mediante body fixed */
+body.menu-open {
+    overflow: hidden;
+    position: fixed; /* fallback; JS también gestiona top para restaurar posición */
+    left: 0;
+    right: 0;
+    /* NO setear height:100vh aquí (evita saltos en móviles) */
 }

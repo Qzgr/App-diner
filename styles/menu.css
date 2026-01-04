@@ -1,17 +1,24 @@
 /* Estilos migrados para el panel lateral del menú */
 .menu-panel{
 	position: fixed;
-	top: 0;
+	/* colocar el panel debajo del header para que el hamburger siga visible */
+	top: 3.5rem;
 	left: 0;
-	width: 320px;
+	/* ocupar la mitad de la pantalla (ajustado con clamp para no quedar ridículamente pequeño) */
+	width: clamp(260px, 50vw, 520px);
 	max-width: 85%;
-	height: 100vh;
-	background: #fff;
+	/* altura desde abajo del header hasta el fondo */
+	height: calc(100vh - 3.5rem);
+	background: var(--card);
+	color: var(--text);
 	box-shadow: 4px 0 12px rgba(0,0,0,0.08);
 	transform: translateX(-100%);
 	transition: transform 250ms ease-in-out;
 	z-index: 1000;
 	overflow-y: auto;
+	overflow-x: hidden; /* evitar scroll lateral dentro del panel */
+	overscroll-behavior: contain; /* que el scroll dentro del panel no afecte al fondo */
+	will-change: transform;
 	padding: 16px;
 }
 
@@ -19,12 +26,13 @@
 	transform: translateX(0);
 }
 
-.menu-panel .menu-close{
-	background: transparent;
-	border: none;
-	font-size: 20px;
-	float: right;
-	cursor: pointer;
+/* asegurar que el iframe no desborde y ocupe todo el panel */
+.menu-panel iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+	overflow: hidden;
 }
 
 .menu-panel .menu-content h3{
@@ -35,8 +43,3 @@
 .menu-list{ list-style: none; padding: 0; margin: 0; }
 .menu-list li{ padding: 8px 0; border-bottom: 1px solid #eee; }
 .menu-list a{ color: #333; text-decoration: none; font-weight: 600; }
-
-/* Small screens: panel full width */
-@media (max-width: 420px){
-	.menu-panel{ width: 100%; max-width: 100%; }
-}
