@@ -232,6 +232,27 @@ h1 {
     border-radius: 10px;
 }
 
+/* cambiar borde en tema oscuro */
+body.dark-theme .cont-entrada {
+    border-color: white;
+}
+
+body.dark-theme .cont-gastos {
+    border-color: white;
+}
+
+body.dark-theme .cont-resumen {
+    border-color: white;
+}
+
+body.dark-theme .cont-list {
+    border-color: white;
+}
+
+body.dark-theme .ahorros-container {
+    border-color: white;
+}
+
 .cont-entrada input {
     width: 63%;
     padding: 10px;
@@ -346,4 +367,20 @@ h1 {
 .hamburger input:checked+svg .line-top-bottom {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
+}
+
+/* Nuevo: hacer que el hamburger sea blanco en tema oscuro */
+body.dark-theme .hamburger .line {
+    stroke: #ffffff;
+}
+
+body.dark-theme .hamburger svg {
+    /* mantener la misma transición y asegurar contraste */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* también cuando está en estado checked (rotado) */
+body.dark-theme .hamburger input:checked+svg .line,
+body.dark-theme .hamburger input:checked+svg .line-top-bottom {
+    stroke: #ffffff;
 }
